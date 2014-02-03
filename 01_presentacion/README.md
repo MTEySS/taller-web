@@ -1,4 +1,3 @@
 # Presentación del taller
-=========================
 
 #TODO

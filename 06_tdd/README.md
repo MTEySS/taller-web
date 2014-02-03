@@ -32,5 +32,7 @@ Para ello habrá que:
 
 2. Implementar correctamente la función utils.wordsToProperCase en utils.js.
 
-3. Luego de hacer pasar las pruebas unitarias, vamos a hacer un refactor de la función para hacerla con programación funcional (evitaremos actualizar una variable en el bucle for.) . Nota: todavía no vimos la parte de programación funcional, así que no hay problema si esperan al siguiente encuentro).
+3. Luego de hacer pasar las pruebas unitarias, vamos a hacer un refactor de la función para hacerla con programación funcional (evitaremos actualizar una variable en el bucle for).
+
+Nota: todavía no vimos la parte de programación funcional, así que no hay problema si esperan al siguiente encuentro.
 
