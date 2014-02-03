@@ -1,4 +1,3 @@
 # Generando aplicaciones móviles
-================================
 
 #TODO

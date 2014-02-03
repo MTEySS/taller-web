@@ -1,4 +1,3 @@
 # Javascript básico
-=========================
 
 #TODO

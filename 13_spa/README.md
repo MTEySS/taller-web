@@ -1,4 +1,3 @@
 # Single Page Application
-=========================
 
 #TODO

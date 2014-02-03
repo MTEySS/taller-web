@@ -1,5 +1,4 @@
 # Taller de desarrollo de aplicaciones web con Software Libre
-=============================================================
 
 El presente repositorio contiene el material de apoyo para el taller de desarrollo de aplicaciones web con Software Libre. Este taller pondrá especial énfasis en los trabajadores estatales, y el por qué las administraciones públicas deben usar software libre, pero puede ser igualmente aprovechado por cualquier persona que quiera desarrollar aplicaciones web.
 
@@ -11,11 +10,11 @@ Este material es un trabajo en curso, y se espera que quienes hagan el curso o e
 
 Cada tema a ser abordado está organizado en un carpeta distinta, con sus respectivos materiales y ejercicios.
 
+
 # Temario
-=========
+
 
 ## Primer encuentro
-===================
 
 1. [Presentación](01_presentacion/README.md)
 
@@ -31,15 +30,15 @@ Cada tema a ser abordado está organizado en un carpeta distinta, con sus respec
 
 7. [Javascript básico](07_js_basico/README.md)
 
+
 ## Segundo encuentro
-====================
 
 8. [Javascript avanzado](08_js_avanzado/README.md)
 
 9. [Programación funcional con Javascript](09_js_funcional/README.md)
 
+
 ## Tercer encuentro
-====================
 
 10. [APIs rest](10_api_rest/README.md)
 
@@ -47,8 +46,8 @@ Cada tema a ser abordado está organizado en un carpeta distinta, con sus respec
 
 12. [Desarrollando una API rest con express.js](12_express/README.md)
 
+
 ## Cuarto encuentro
-===================
 
 13. [¿Qué es una Single Page application (SPA)?](13_spa/README.md)
 
@@ -56,8 +55,8 @@ Cada tema a ser abordado está organizado en un carpeta distinta, con sus respec
 
 15. [Presentación de frameworks javascript en el cliente](15_js_client/README.md)
 
+
 ## Quinto encuentro
-===================
 
 16. [Cloud computing](16_cloud/README.md)
 
@@ -65,7 +64,6 @@ Cada tema a ser abordado está organizado en un carpeta distinta, con sus respec
 
 
 ## Sexto encuentro
-===================
 
 Conclusiones
 

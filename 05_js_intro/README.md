@@ -1,4 +1,3 @@
 # Introducción a Javascript
-=========================
 
 #TODO
