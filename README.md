@@ -57,10 +57,15 @@ Principios de programación funcional. Funciones útiles de la librería [unders
 
 10. [APIs rest](10_api_rest/README.md)
 
+Protocolo [HTTP](https://es.wikipedia.org/wiki/HTTP). Principios de [REST](https://es.wikipedia.org/wiki/REST). Criterios para el diseño de una API REST. Formato [JSON (JavaScript Object Notation)](http://json.org/).
+
 11. [Javascript en el servidor](11_js_servidor/README.md)
+
+Introducción a [Node.js](http://nodejs.org/). Ejemplos básicos. [Node Packaged Modules - npm](https://npmjs.org/). Otras herramientas para trabajar con node.
 
 12. [Desarrollando una API rest con express.js](12_express/README.md)
 
+Presentación de [express.js](http://expressjs.com/), un framework para hacer aplicaciones web y web services con node. Otros frameworks para trabajar con node.
 
 ## Cuarto encuentro
 
@@ -68,7 +73,7 @@ Principios de programación funcional. Funciones útiles de la librería [unders
 
 14. [Responsive design con twitter bootstrap](14_bootstrap/README.md)
 
-15. [Presentación de frameworks javascript en el cliente](15_js_client/README.md)
+15. [Presentación de frameworks javascript en el cliente](15_js_cliente/README.md)
 
 
 ## Quinto encuentro
