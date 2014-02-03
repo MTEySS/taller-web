@@ -28,7 +28,7 @@ Historia y principios del [software libre](https://es.wikipedia.org/wiki/Softwar
 
 Para armar nuestro entorno de desarrollo utilizaremos alguna distribución de [GNU/Linux](https://www.gnu.org/), como [Ubuntu](http://www.ubuntu.com/). Comentamos su historia y actual desarrollo y brindamos algunos lineamientos para su instalación.
 
-4. [git & github](04_git_github/README.md)
+4. [git & github](04_git_github/README.md) (ver **[ejercicios!](04_git_github/README.md#ejercicios)**)
 
 Control de código fuente ditribuido con [git](http://www.git-scm.com/). Comandos básicos. Visualizando un repositorio con [ungit](https://github.com/FredrikNoren/ungit). Desarrollo colaborativo con [github](https://github.com/).
 
@@ -36,21 +36,21 @@ Control de código fuente ditribuido con [git](http://www.git-scm.com/). Comando
 
 Historia y situación actual de [Javascript](https://es.wikipedia.org/wiki/JavaScript). Características del lenguaje.
 
-6. [TDD - Test driven development](06_tdd/README.md)
+6. [TDD - Test driven development](06_tdd/README.md) (ver **[ejercicios!](06_tdd/README.md#ejercicios)**)
 
 Principios de [Desarrollo conducido por pruebas](https://es.wikipedia.org/wiki/Tdd). Workflow de trabajo de TDD. Ejemplos en Javascript con [QUnit](http://qunitjs.com/) y [Jasmine](http://jasmine.github.io/2.0/introduction.html). Koans de Javascript para aprender el lenguaje de manera interactiva completando pruebas unitarias ([básicos](https://github.com/liammclennan/JavaScript-Koans) y [avanzados](https://github.com/mrdavidlaing/javascript-koans)).
 
-7. [Javascript básico](07_js_basico/README.md)
+7. [Javascript básico](07_js_basico/README.md) (ver **[ejercicios!](07_js_basico/README.md#ejercicios)**)
 
 Conceptos básicos de Javascript. Comparando valores. Alcance y visibilidad de las variables. Tipos de variables. Variables por [referencia](https://en.wikipedia.org/wiki/Call_by_reference#Call_by_reference), por [valor](https://en.wikipedia.org/wiki/Evaluation_strategy#Call_by_value) y [compartidas](https://en.wikipedia.org/wiki/Call_by_sharing#Call_by_sharing).
 
 ## Segundo encuentro
 
-8. [Javascript avanzado](08_js_avanzado/README.md)
+8. [Javascript avanzado](08_js_avanzado/README.md) (ver **[ejercicios!](08_js_avanzado/README.md#ejercicios)**)
 
 Reflection. Herencia prototípica y la cadena de prototipos. Valor de la variable 'this' y su uso en los callbacks.
 
-9. [Programación funcional con Javascript](09_js_funcional/README.md)
+9. [Programación funcional con Javascript](09_js_funcional/README.md)  (ver **[ejercicios!](funcional/README.
 Principios de programación funcional. Funciones útiles de la librería [underscore](http://underscorejs.org/) y [lodash](http://lodash.com/). [Higher order functions](https://en.wikipedia.org/wiki/Higher-order_function) y [clousures](https://en.wikipedia.org/wiki/Closure_%28computer_science%29).
 
 ## Tercer encuentro
