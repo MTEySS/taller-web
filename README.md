@@ -24,7 +24,7 @@ Explicamos los temas que abordaremos, las herramientas que utilizaremos y la apl
 
 Historia y principios del [software libre](https://es.wikipedia.org/wiki/Software_libre), el estado actual de su desarrollo, las razones por las cuales es necesario impulsar su adopción en las administraciones públicas y su relación con la soberanía digital.
 
-3. [GNU/Linux](03_gnu-linux/README.md) *[ver ejercicios!](03_gnu-linux/README.md#ejercicios)*
+3. [GNU/Linux](03_gnu-linux/README.md) (ver **[ejercicios!](03_gnu-linux/README.md#ejercicios)**)
 
 Para armar nuestro entorno de desarrollo utilizaremos alguna distribución de [GNU/Linux](https://www.gnu.org/), como [Ubuntu](http://www.ubuntu.com/). Comentamos su historia y actual desarrollo y brindamos algunos lineamientos para su instalación.
 
