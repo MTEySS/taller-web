@@ -1,0 +1,110 @@
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ejemplo de tdd</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">TDD demo</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="well">
+        <p>Esta es una aplicación de ejemplo para mostrar cómo se podría utilizar la función <bold>cuit.esValido</bold> en un alta de un registro. Al tipear cualquier caracter en el input box de cuit, se ejecutará la función de validación. Si no hay un cuit válido, le agregará el class <i>has-error</i> para indicar que el valor del campo es erróneo.</p>
+        <p>Inicialmente la funcion <bold>cuit.esValido</bold> sólo retorna verdadero cuando ingresa un '1'. Puede probarlo ingresando distintos valores en el input box. El ejercicio consiste en agregar pruebas unitarias en <i>test/spec/cuitSpec.js</i> y luego implementar correctamente la función <bold>cuit.esValido</bold> en cuit.js.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Alta de usuario</h3>
+            </div>
+
+            <div class="panel-body">
+
+              <form role="form">
+                <div class="form-group">
+                  <label for="nombre">Nombre</label>
+                  <input type="input" class="form-control" id="nombre" placeholder="Ingrese el nombre">
+                </div>
+                <div class="form-group">
+                  <label for="apellido">Apellido</label>
+                  <input type="password" class="form-control" id="apellido" placeholder="Ingrese el apellido">
+                </div>
+                <div class="form-group">
+                  <label for="cuit">Cuit</label>
+                  <input type="cuit" class="form-control" id="cuit" placeholder="99-99999999-9">
+                  <span class="help-block">Debe ingresar un número de cuit válido.</span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-default">Sign in</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div><!-- /.col-sm-12 -->
+      </div> <!-- /container -->
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="cuit.js"></script>
+
+    <script>
+      $(function() {
+
+        var onCuitChanged = function(e) {
+          var control = $(e.currentTarget);
+          var container = control.parent();
+
+          if (cuit.esValido(control.val())) {
+            container.removeClass('has-error');
+          } else {
+            container.addClass('has-error');
+          }
+        };
+
+        $('#cuit').keyup(onCuitChanged);
+
+      })
+    </script>
+
+  </body>
+</html>
