@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf8'>
+  </head>
+  <body>
+
+    <h1>Mock-api tests</h1>
+
+    <h2>query records</h2>
+
+    <ul>
+      <li>get all records: <a href='api/usuarios'>/api/usuarios</a></li>
+      <li>get all records order by name: <a href='/api/usuarios?order=nombre'>/api/usuarios?order=nombre</a></li>
+      <li>get all records order by name descending: <a href='/api/usuarios?order=nombre&sort=desc'>/api/usuarios?order=nombre&amp;sort=desc</a></li>
+      <li>get first 3 records: <a href='/api/usuarios?len=3'>/api/usuarios?len=3</a></li>
+      <li>get second page of 3 records: <a href='/api/usuarios?page=2&len=3'>/api/usuarios?page=2&amp;len=3</a></li>
+      <li>get second page order by age: <a href='/api/usuarios?order=age&page=2&len=3'>/api/usuarios?order=age&amp;page=2&amp;len=3</a></li>
+      <li>get records containing ma: <a href='/api/usuarios?q=ma'>/api/usuarios?q=ma</a></li>
+      <li>get records containing ma in the field nombre: <a href='/api/usuarios?q=ma&fields=nombre'>/api/usuarios?q=ma&amp;fields=nombre</a></li>
+    </ul>
+
+    <h2>query a specific record</h2>
+
+    <ul>
+      <li>get record with id 2: <a href='api/usuarios/2'>/api/usuarios/2</a></li>
+      <li>get a non existent record: <a href='api/usuarios/999'>/api/usuarios/999</a></li>
+    </ul>
+
+  </body>
+</html>
