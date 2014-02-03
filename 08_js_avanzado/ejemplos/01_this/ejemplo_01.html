@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf8'>
+    <script src='lib/jquery/jquery.min.js' /></script>
+    <script src='myBind.js' /></script>
+  </head>
+  <body>
+    <h1>Ejemplo de los problemas con this</h1>
+    <br /><br />
+    <h1><div id='saluda-container' /></h1>
+
+    <label>Ejecutando código directamente en el handler</label>
+    <input id='saluda-button1' type='button' value='¡saludame!' />
+    <hr />
+
+    <label>Llamando a un handler que ejecuta persona.saluda</label>
+    <input id='saluda-button2' type='button' value='¡saludame!' />
+    <hr />
+
+    <label>Usando un método de persona como handler</label>
+    <input id='saluda-button3' type='button' value='¡saludame!' />
+    <hr />
+
+    <label>Usando un método "binded" de persona como handler</label>
+    <input id='saluda-button4' type='button' value='¡saludame!' />
+    <hr />
+
+    <script>
+
+    var persona = {
+      nombre: 'Juan',
+      apellido: 'Alumno',
+      saluda: function() {
+        $('#saluda-container').html('hola ' + this.nombre + ' ' + this.apellido);
+        $('#saluda-container').fadeIn(1000).fadeOut(1000);
+      }
+    }
+
+    var saludaHandler = function() {
+      persona.saluda();
+    };
+
+    $('#saluda-button1').click(function() {
+      persona.saluda();
+    });
+
+    // si pusiéramos saludaHandler() lo estaríamos ejecutando
+    // y asignaríamos el valor que retorna saludaHandler
+    // en este caso asignamos como handler la función
+    // SIN EJECUTARLA
+    $('#saluda-button2').click(saludaHandler);
+
+    $('#saluda-button3').click(persona.saluda);
+
+    // $('#saluda-button4').click(persona.saluda.bind(persona));
+    $('#saluda-button4').click(myBind(persona.saluda, persona));
+
+    </script>
+  </body>
+
+</html>

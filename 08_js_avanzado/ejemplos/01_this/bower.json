@@ -1,0 +1,20 @@
+{
+  "name": "ejemplo_01",
+  "version": "0.0.1",
+  "authors": [
+    "opensas <opensas@gmail.com>"
+  ],
+  "description": "ejemplo de los problemas con this 0.0.1",
+  "main": "ejemplo_01.html",
+  "license": "GPL3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0"
+  }
+}
