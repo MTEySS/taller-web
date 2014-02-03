@@ -80,7 +80,7 @@ Presentación de [express.js](http://expressjs.com/), un framework para hacer ap
 
 16. [Cloud computing](16_cloud/README.md)
 
-17. [Generando aplicaciones móviles](17_movile/README.md)
+17. [Generando aplicaciones móviles](17_mobile/README.md)
 
 
 ## Sexto encuentro
