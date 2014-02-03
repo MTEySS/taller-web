@@ -1,5 +1,5 @@
 # Armando nuestro entorno de desarrollo
 
-## Linux
+## GNU/Linux
 
 #TODO
