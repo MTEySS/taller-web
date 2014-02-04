@@ -36,7 +36,7 @@ var cuit = {
     if (!regExp.test(cuit)) return false;
 
     // elimino los guiones
-    cuit = cuit.replace(/-/gi, '');
+    cuit = cuit.replace(/-/g, '');
 
     var acum = 0;
 

@@ -73,6 +73,12 @@ var cuit = {
     Para calcular el resto
 
   parseInt: https://developer.mozilla.org/es/docs/Gu%C3%ADa_JavaScript_1.5/Funciones_predefinidas/Funciones_parseInt_y_parseFloat
+
+  Otra ayuda, la siguiente expresión regular nos permite validar el formato del cuit
+    // sólo acepto: 12345678901 o 12-34567890-1
+    var regExp = /^\d{11}$|^\d{2}-\d{8}-\d$/;
+    regExp.test(cuit));
+
   */
 
   esValido: function (cuit) {
