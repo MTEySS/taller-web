@@ -50,7 +50,8 @@ Conceptos básicos de Javascript. Comparando valores. Alcance y visibilidad de l
 
 Reflection. Herencia prototípica y la cadena de prototipos. Valor de la variable 'this' y su uso en los callbacks.
 
-9. [Programación funcional con Javascript](09_js_funcional/README.md)  (ver **[ejercicios!](funcional/README.
+9. [Programación funcional con Javascript](09_js_funcional/README.md)  (ver **[ejercicios!](funcional/README.md#ejercicios)
+
 Principios de programación funcional. Funciones útiles de la librería [underscore](http://underscorejs.org/) y [lodash](http://lodash.com/). [Higher order functions](https://en.wikipedia.org/wiki/Higher-order_function) y [clousures](https://en.wikipedia.org/wiki/Closure_%28computer_science%29).
 
 ## Tercer encuentro
