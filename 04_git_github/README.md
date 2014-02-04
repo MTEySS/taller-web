@@ -33,3 +33,8 @@ http://www.bogotobogo.com/cplusplus/Git/Git_GitHub_status_add_status_log.php
 http://www.bogotobogo.com/cplusplus/Git/Git_GitHub_commit_diff.php
 http://www.bogotobogo.com/cplusplus/Git/GitHub_Account_SSH_Key.php
 http://www.bogotobogo.com/cplusplus/Git/GitHub_Uploading.php
+
+
+A revisar:
+
+http://ged.msu.edu/angus/tutorials-2013/git-koans.html
