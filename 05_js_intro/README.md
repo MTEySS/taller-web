@@ -42,6 +42,25 @@ Las variables pueden cambiar de tipo.
 
 Casi todo son objetos en JavaScript. Los objetos en JavaScript son arrays asociativos con soporte de prototipos.
 
+Ejemplo de un objeto como un array asociativo
+```javascript
+var miObjeto = {
+  nombre: 'objeto',
+  edad: 22,
+  deciHola: function() {
+    alert('hola');
+  },
+  otroObjeto: {
+    nombre: 'anidado',
+    edad: 10
+  }
+};
+
+miObjeto.nombre      // retorna 'objeto'
+miObjeto['nombre']   // también retorna 'objeto', sintaxis alternativa
+
+```
+
 * Funciones de primera clase
 
 Las funciones son un tipo más de datos, poseen propiedades y métodos. Cada función es creada como una clausura (clousure), reteniendo el valor de su entorno de ejecución.
@@ -75,6 +94,7 @@ myObject.helloWorld();   // retorna 'hello world'
 
 Los arrays y objetos pueden ser creados con una sintaxis abreviada
 
+```javascript
 var a1 = new Array(1,2,3);
 
 var a1 = [1, 2, 3];           // definido de manera literal
@@ -82,8 +102,8 @@ var a1 = [1, 2, 3];           // definido de manera literal
 var o1 = new Object();
 o1.nombre = 'Juan'
 
-var o1 = { nombre: 'Juan'}   // definido de manea literal
-
+var o1 = { nombre: 'Juan'}   // definido de manera literal
+```
 
 ## Ejecutando JavaScript en el browser
 
@@ -91,7 +111,7 @@ Hay tres maneras de ejecutar JavaScript desde una página web.
 
 **Desde un archivo externo.**
 
-Simplemente incluimos un tag <script> con un atributo src apuntando al archivo que queremos incluir.
+Simplemente incluimos un tag &lt;script> con un atributo src apuntando al archivo que queremos incluir.
 
 ```html
 <html>
@@ -104,9 +124,9 @@ Simplemente incluimos un tag <script> con un atributo src apuntando al archivo q
 </html>
 ```
 
-**Desde un tag <script>.**
+**Desde un tag &lt;script>.**
 
-Incluimos el código JavaScript entre tags <script>.
+Incluimos el código JavaScript entre tags &lt;script>.
 
 ```html
 <html>
