@@ -1,0 +1,20 @@
+<html>
+  <head></head>
+
+  <a href='#' onclick='alert("hola desde html!");'>JavaScript en el html (MUY FEO!!!)</a><br /><br />
+
+  <a href='#' onclick='desdeTag();'>JavaScript entre tags &lt;script></a><br /><br />
+
+  <a href='#' onclick='desdeArchivo();'>JavaScript desde archivo helper.js</a><br /><br />
+
+  <body>
+    <!-- JavaScript entre tags <script> -->
+    <script type='text/javascript'>
+      var desdeTag = function() {
+        alert('hola desde tag <script>!');
+      }
+    </script>
+    <script type='text/javascript' src='helper.js'></script>
+
+  </body>
+</html>
