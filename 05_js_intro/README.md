@@ -2,9 +2,8 @@
 
 ## JavaScript es
 
-* lenguaje de programación
-* dinámico
-* débilmente tipado
+* lenguaje de programación dinámico
+* débilmente Tipado
 * basado en prototipos
 * presente en cualquier explorador web
 * con funciones de primera clase (first-class functions)
