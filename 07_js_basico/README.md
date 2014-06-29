@@ -18,18 +18,25 @@ false, null, undefined, 0, '', NaN
 
 Cualquier otro valor es interpretado como verdadero.
 
-Consejo: para evitar utilizar siempre el operador ===
+Consejo: para evitar confusiones utilizar **siempre** el operador ===
 
 Ejemplo:
 
 ```javascript
 function alCuadrado(valor) {
-  if (!value) throw new Error('valor no puede estar vacío');
-  return valor * valor
+  if (!valor) throw new Error('valor no puede estar vacío');
+  return valor * valor;
 };
 ```
 
-Si pasamos el valor 0, que es un valor válido, nos va a tirar un error. Podemos arreglar la función de esta manera:
+Si pasamos el valor 0, que es un valor válido, nos va a tirar un error. Además, alCuadrado(true) retorna 1, lo cual puede ser un tanto confuso. Podemos arreglar la función de esta manera:
+
+```javascript
+function alCuadrado(valor) {
+  if (typeof(valor) !== 'number') throw new Error('valor debe ser un número');
+  return valor * valor;
+};
+```
 
 ## Scope y asignación
 
