@@ -1,16 +1,53 @@
-# Programación funcional cno Javascript
+# Programación funcional con Javascript
 
-#TODO
+#TODO - Principios de programación funcional
+
+#TODO - Introducción underscore y lodash
+
+#TODO - Higher order functions
+
+#TODO - Clousures
+
+En JavaScript cada función es creada como una [clausura o clousure](https://en.wikipedia.org/wiki/Closure_%28computer_science%29), esto significa que la función retiene el valor de su contexto de ejecución.
+
+Más precisamente una clausura es una función o referencia a una función que mantiene un contexto de referencia (una tabla que almacena una referencia a cada variable que no es local a la función, pero que es visible dentro al misma). Un clousure, a diferencia de un mero puntero a función, permite que la función pueda acceder a esas variables no locales aún cuando sea invocada en un contexto donde estas variables no sean visibles.
+
+Esto quedará más claro con un ejemplo:
+
+```javascript
+
+var contexto = function() {
+  var privada = 'Esta es una variable privada';
+  var clousure = function() {
+    alert(privada);                 // privada es visible en este contexto
+  };
+  return clousure;    // clousure mantiene una referencia a privada
+};
+
+var c1 = contexto();  // c1 es un clousure que mantiene una referencia a privada
+var c2 = function() {
+  alert(privada);     // privada no está definida en este contexto
+};
+
+c1();    // aparece una ventana mostrando: 'Esta es una variable privada'
+c2();    // ReferenceError: privada is not defined
+```
+
+La variable `privada` no es una variable local de la función `clousure` pero es visible dentro de ella, por lo que decimos que pertenece a su contexto de referencia.
+
+Cuando la función `contexto` es ejecutada retorna la función `clousure`, la cual mantiene la referencia a la variable `privada`, por más que la misma ya no sea visible fuera de la función `contexto`.
+
+Por el contrario, la función `c2`, que en principio parecería idéntica a la función `c1`, varía en su contexto de referencia, ya que donde fue definida la varaible `privada` no existe.
 
 ## Ejercicios
 
 ### 09_functions (ejercicios/09_functions)
 
-El ejercicio consistirá en implementar varias funciones bastante conocidas en el mundo de la programación funcional y refactorizar otas para mejorar su rendimiento. Varias de estas funciones vienen provistas por la librería [underscore](http://underscorejs.org), por lo que podés mirar su documentación si tenés alguna duda.
+El ejercicio consistirá en implementar varias funciones bastante conocidas en el mundo de la programación funcional y refactorizar otras para mejorar su rendimiento. Varias de estas funciones vienen provistas por la librería [underscore](http://underscorejs.org), por lo que podés mirar su documentación si tenés alguna duda.
 
 En test/spec hay una batería de pruebas que podés correr y que te servirán para probar las funciones que vayas a implementar y para verificar que no rompas nada luego de hacer el refactor. Para ejecutar las pruebas abrí test/SpecRunner.html en un explorador.
 
-En todos los cass hay que buscar los comentarios con '#TODO!' y efectuar los cambios necesarios.
+En todos los casos hay que buscar los comentarios con '#TODO!' y efectuar los cambios necesarios.
 
 Estas son las funciones a desarrollar y refactorizar:
 
