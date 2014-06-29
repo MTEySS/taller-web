@@ -6,7 +6,7 @@
 
 #TODO - Higher order functions
 
-#TODO - Clousures
+#Clousures
 
 En JavaScript cada función es creada como una [clausura o clousure](https://en.wikipedia.org/wiki/Closure_%28computer_science%29), esto significa que la función retiene el valor de su contexto de ejecución.
 
@@ -38,6 +38,19 @@ La variable `privada` no es una variable local de la función `clousure` pero es
 Cuando la función `contexto` es ejecutada retorna la función `clousure`, la cual mantiene la referencia a la variable `privada`, por más que la misma ya no sea visible fuera de la función `contexto`.
 
 Por el contrario, la función `c2`, que en principio parecería idéntica a la función `c1`, varía en su contexto de referencia, ya que donde fue definida la varaible `privada` no existe.
+
+Para otros ejemplos y usos más avanzados ver [este artículo](https://developer.mozilla.org/es/docs/JavaScript/Guide/Closures) en mozilla developer network.
+
+Ejemplo de error muy común con clousures y hoisted variables: [link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures#Creating_closures_in_loops.3A_A_common_mistake)
+
+#TODO - Varaible hoisting
+
+#Clousures
+
+http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting
+http://jamesallardice.com/explaining-function-and-variable-hoisting-in-javascript/
+
 
 ## Ejercicios
 
