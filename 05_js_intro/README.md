@@ -12,7 +12,7 @@
 * sintaxis similar a C y Java
 * ¡pero no tiene NADA QUE VER con Java!
 
-## Historia de Javascript
+## Historia de JavaScript
 
 * creado en 1995 por [Brenda Eich](https://es.wikipedia.org/wiki/Brendan_Eich)
 * para ser incluido como lenguaje de scripting en el navegador Netscape
@@ -62,7 +62,7 @@ miObjeto['nombre']   // también retorna 'objeto', sintaxis alternativa
 
 * Funciones de primera clase
 
-Las funciones son un tipo más de datos, poseen propiedades y métodos. Cada función es creada como una clausura (clousure), reteniendo el valor de su entorno de ejecución.
+Las funciones son un tipo más de datos, poseen propiedades y métodos. Cada función es creada como una clausura (clousure), reteniendo el valor de su contexto de ejecución.
 
 * Basado en prototipos
 
@@ -144,7 +144,7 @@ Incluimos el código JavaScript entre tags &lt;script>.
 
 **Embebido en el html**
 
-Incluimos el código JavaScript en un atriuto de un elemento html. Esta forma no es recomendad dad que nos queda mezclado el código JavaScript con nuestro html. Más adelante veremos que hay mejores formas de hacer esto.
+Incluimos el código JavaScript en un atriuto de un elemento html. Esta forma no es recomendada ya que nos queda mezclado el código JavaScript con nuestro html. Más adelante veremos que hay mejores formas de hacer esto.
 
 ```html
 <html>
