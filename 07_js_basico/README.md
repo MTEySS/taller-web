@@ -234,6 +234,13 @@ De esta manera vamos completando todas las pruebas hasta que no haya ninguna que
 
 Podés pegarle una mirada a la solución a estos koans está en soluciones/01_koans/topics.
 
+### 02_objetos_arrays (ejercicios/02_objetos_arrays)
+
+El objetivo de este ejercicio es familiarizarse con la sintaxis que provee JavaScript para crear objetos y arrays de manera literal.
+
+Para ello simplemente habrá que completar las declaraciones de objetos y arrays de manera literal para hacer pasar todas las pruebas unitarias. Ante cualquier duda resulta de suma ayuda ver el código de dichas pruebas unitarias.
+
+La solución a estos ejercicios está en soluciones/02_objetos_arrays/test/SpecRunner.html.
 
 ## Recursos:
 

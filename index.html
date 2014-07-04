@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ejercicios del taller web</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Taller-web</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+
+
+    <div class="well">
+      <p>Aquí están disponibles los ejercicios y recursos del taller web.</p>
+    </div>
+
+
+    <h3 id="overview" class="page-header">Capítulo 6 - Test Drive Development con JavaScript</h3>
+
+    <ul>
+      <li><a href='06_tdd/ejercicios/01_properCase/test/SpecRunner.html'>01_properCase</a></li>
+      <li><a href='06_tdd/ejercicios/02_valida_cuit/test/SpecRunner.html'>02_valida_cuit</a></li>
+    </ul>
+
+    <h3 id="overview" class="page-header">Capítulo 6 - Test Drive Development con JavaScript</h3>
+
+    <ul>
+      <li><a href='07_js_basico/ejercicios/01_koans/jskoans.htm'>01_koans</a></li>
+      <li><a href='07_js_basico/ejercicios/02_objetos_arrays/test/SpecRunner.html'>02_objetos_arrays</a></li>
+    </ul>
+
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="cuit.js"></script>
+
+    <script>
+      $(function() {
+
+        var onCuitChanged = function(e) {
+          var control = $(e.currentTarget);
+          var container = control.parent();
+
+          if (cuit.esValido(control.val())) {
+            container.removeClass('has-error');
+          } else {
+            container.addClass('has-error');
+          }
+        };
+
+        $('#cuit').keyup(onCuitChanged);
+
+      })
+    </script>
+
+  </body>
+</html>

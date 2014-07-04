@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Jasmine Spec Runner v2.0.0</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.0.0/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.0/jasmine.css">
+
+  <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>
+
+  <script type="text/javascript">
+
+  var __ = undefined;
+
+  describe('creando objetos de manera literal: ', function() {
+
+    /*
+      Con la información de la primera película de Indiana Jones disponible en:
+      http://www.imdb.com/title/tt0082971/?ref_=fn_al_tt_1
+
+      asignar a la variable pelicula un nuevo objeto con los siguientes campos:
+
+      title, year, rating
+    */
+
+    var pelicula = __;
+
+    it('deberia contener la informacion de la película "Citizen Kane"', function() {
+      expect(pelicula).toBeDefined();
+      expect(pelicula.title.toLowerCase()).toEqual('raiders of the lost ark');
+      expect(pelicula.year).toEqual(1981);
+      expect(pelicula.rating).toEqual(8.6);
+    });
+
+    /*
+      Con la información de las tres primeras películas de Indiana Jones
+        http://www.imdb.com/title/tt0082971/?ref_=fn_al_tt_1
+        http://www.imdb.com/title/tt0087469/?ref_=fn_al_tt_5
+        http://www.imdb.com/title/tt0097576/?ref_=fn_al_tt_4
+
+      Crear un objeto que tenga como clave el título de la película en minúsculas
+      (atención, el título contiene espacios, por lo que no
+      vas a poder utilizar la notación "objeto.propiedad")
+      y como valor un objeto anidado con la siguiente información
+
+      year, rating
+    */
+    var peliculasIndi = __;
+
+    it('objetos anidados: deberia contener la informacion de las películas de Indiana Jones', function() {
+
+      expect(peliculasIndi['raiders of the lost ark']).toBeDefined();
+      expect(peliculasIndi['raiders of the lost ark'].year).toEqual(1981);
+      expect(peliculasIndi['raiders of the lost ark'].rating).toEqual(8.6);
+
+      expect(peliculasIndi['indiana jones and the temple of doom']).toBeDefined();
+      expect(peliculasIndi['indiana jones and the temple of doom'].year).toEqual(1984);
+      expect(peliculasIndi['indiana jones and the temple of doom'].rating).toEqual(7.6);
+
+      expect(peliculasIndi['indiana jones and the last crusade']).toBeDefined();
+      expect(peliculasIndi['indiana jones and the last crusade'].year).toEqual(1989);
+      expect(peliculasIndi['indiana jones and the last crusade'].rating).toEqual(8.3);
+
+    });
+
+  });
+
+
+  describe('creando arrays de manera literal: ', function() {
+
+    /*
+      Crear un array literal llamado arrayLiteral que sea igual a array1
+    */
+
+    var array1 = [];
+
+    array1.push('Hola');
+    array1.push('desde');
+    array1.push('Buenos');
+    array1.push('Aires');
+
+    array1.splice(1, 0, 'Amigos');
+
+    var arrayLiteral = __;
+
+    it('ambos arrays deberían ser idénticos', function() {
+      expect(arrayLiteral).toBeDefined();
+      expect(array1.length).toEqual(arrayLiteral.length);
+
+      array1.forEach(function(element, index) {
+        expect(array1[index]).toEqual(arrayLiteral[index]);
+      });
+    });
+
+    /*
+      Crear un array literal con los primeros 10 elementos de la serie de fibonacci (comenzando en cero)
+    */
+
+    var fibo = [];
+    fibo.push(0);
+    fibo.push(1);
+
+    for(var i=2; i<10; i++) {
+      fibo.push(fibo[i-2] + fibo[i-1]);
+    }
+
+    var fiboLiteral = __;
+
+    it('la serie fibonacci literal debería ser idéntica a la calculada', function() {
+      expect(fiboLiteral).toBeDefined();
+      expect(fibo.length).toEqual(fiboLiteral.length);
+
+      fibo.forEach(function(element, index) {
+        expect(fibo[index]).toEqual(fiboLiteral[index]);
+      });
+    });
+
+  });
+
+  describe('combinando objetos y arrays literales: ', function() {
+
+    /*
+      Con la información de las tres primeras películas de Indiana Jones
+        http://www.imdb.com/title/tt0082971/?ref_=fn_al_tt_1
+        http://www.imdb.com/title/tt0087469/?ref_=fn_al_tt_5
+        http://www.imdb.com/title/tt0097576/?ref_=fn_al_tt_4
+
+      Crear un array con tres objetos, uno por cada película con la siguiente
+      información:
+
+      title, year, rating, stars
+
+      stars es un array con las principales estrellas listadas en la pagina de imdb
+
+    */
+
+    var arrayIndi = __;
+
+    it('el array debería contener la información de las tres películas', function() {
+
+      expect(arrayIndi).toBeDefined();
+      expect(arrayIndi.length).toEqual(3);
+
+      expect(arrayIndi[0].title.toLowerCase()).toEqual('raiders of the lost ark');
+      expect(arrayIndi[0].year).toEqual(1981);
+      expect(arrayIndi[0].rating).toEqual(8.6);
+      expect(arrayIndi[0].stars.length).toEqual(3);
+      expect(arrayIndi[0].stars.join(',').toLowerCase())
+        .toEqual('harrison ford,karen allen,paul freeman');
+
+      expect(arrayIndi[1].title.toLowerCase()).toEqual('indiana jones and the temple of doom');
+      expect(arrayIndi[1].year).toEqual(1984);
+      expect(arrayIndi[1].rating).toEqual(7.6);
+      expect(arrayIndi[1].stars.length).toEqual(3);
+      expect(arrayIndi[1].stars.join(',').toLowerCase())
+        .toEqual('harrison ford,kate capshaw,jonathan ke quan');
+
+      expect(arrayIndi[2].title.toLowerCase()).toEqual('indiana jones and the last crusade');
+      expect(arrayIndi[2].year).toEqual(1989);
+      expect(arrayIndi[2].rating).toEqual(8.3);
+      expect(arrayIndi[2].stars.length).toEqual(3);
+      expect(arrayIndi[2].stars.join(',').toLowerCase())
+        .toEqual('harrison ford,sean connery,alison doody');
+
+    });
+
+  });
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
