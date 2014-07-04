@@ -63,33 +63,11 @@
 
     </div> <!-- /container -->
 
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-    <script src="cuit.js"></script>
-
-    <script>
-      $(function() {
-
-        var onCuitChanged = function(e) {
-          var control = $(e.currentTarget);
-          var container = control.parent();
-
-          if (cuit.esValido(control.val())) {
-            container.removeClass('has-error');
-          } else {
-            container.addClass('has-error');
-          }
-        };
-
-        $('#cuit').keyup(onCuitChanged);
-
-      })
-    </script>
 
   </body>
 </html>
