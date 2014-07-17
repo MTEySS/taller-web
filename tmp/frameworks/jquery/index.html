@@ -152,15 +152,16 @@
       // template setting - moustache like style
       _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
-      var htmlRowTemplate =
+/*      var htmlRowTemplate =
         '<tr>\n' +
         '  <td>{{number}}</td>\n' +
         '  <td>{{name}}</td>\n' +
         '  <td><a href="{{url}}">{{url}}</a></td>\n' +
         '  <td>{{descripcion}}</td>\n' +
         '</tr>\n\n';
-
-      var rowTemplate = _.template(htmlRowTemplate);
+*/
+      // var rowTemplate = _.template(htmlRowTemplate);
+      var rowTemplate = _.template($('#row-template').html());
 
       // sample: https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc
       var githubReposEndpoint = 'https://api.github.com/search/repositories';
@@ -201,6 +202,16 @@
       };
 
     });
+    </script>
+
+    <script type="text/template" id="row-template">
+        <tr>
+          <td>{{number}}</td>
+          <td>{{name}}</td>
+          <td><a href="{{url}}">{{url}}</a></td>
+          <td>{{descripcion}}</td>
+        </tr>
+
     </script>
 
   </body>
