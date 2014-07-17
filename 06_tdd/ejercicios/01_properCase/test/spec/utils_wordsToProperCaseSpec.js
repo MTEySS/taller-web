@@ -40,6 +40,8 @@ describe('utils.wordsToProperCase', function() {
   */
   it('debería retornar una oración vacía si la oración pasada no es un string', function() {
     // #TODO!!!
+    expect('#TODO').toBe('#DONE');
+    expect('#TODO').toBe('#DONE');
   });
 
 });

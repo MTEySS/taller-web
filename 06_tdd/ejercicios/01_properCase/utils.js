@@ -1,10 +1,13 @@
 /*
-  El ejercicio consiste en implementar la función words.toProperCase
+  El ejercicio consiste en implementar la función utils.toProperCase
+  y la functión utils.wordsToProperCase
 
   Hay que buscar y completar las etiquetas que digan #TODO!
 
-  Luego de hacer pasar las pruebas, pueden intentar hacer un refactor y utilizar
-  y evitar el bucle for, utilizando las funciones split, map y join.
+  Luego de hacer pasar las pruebas, pueden intentar hacer un refactor
+  aplicando un enfoque funcional. Para ello desarrollar la función
+  utils.wordsToProperCase2 sin utiliza bucles como for y while, y en lugar
+  de ellos usar las funciones split, map y join.
 */
 
 var utils = {
@@ -16,14 +19,12 @@ var utils = {
   * @returns {string} Retorna la palabra convertida a proper case
   *
   * @example
-  * utils.toProperCase('juan')           // retorna 'juan'
+  * utils.toProperCase('juan')           // retorna 'Juan'
   * utils.toProperCase(234)              // retorna ''
   */
 
   toProperCase: function(palabra) {
-    if (typeof(palabra) !== 'string') return '';
-    palabra = palabra.trim();
-    return palabra.charAt(0).toUpperCase() + palabra.substring(1).toLowerCase();
+    // #TODO!
   },
 
   /**
@@ -45,18 +46,7 @@ var utils = {
   */
 
   wordsToProperCase: function(palabras) {
-    if (typeof(palabras) !== 'string') return '';
-
     // #TODO!!!
-
-    var resultado = '';
-    var palabrasArray = palabras.split(' ');
-
-    for (var i = 0, end = palabrasArray.length; i < end; i++) {
-      resultado += ' ' + utils.toProperCase(palabrasArray[i]);
-    }
-
-    return resultado.substring(1);
   },
 
   /*
