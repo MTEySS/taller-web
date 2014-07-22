@@ -26,12 +26,14 @@ app.all('/api/*', function (req, res, next) {
   next();
 });
 
+  
 
 // Routes simple way
 app.get('/api/todo', function (req, res, next) {
   // return todo list
   res.send(todos);
 });
+  
 
 app.post('/api/todo', function (req, res, next) {
 
