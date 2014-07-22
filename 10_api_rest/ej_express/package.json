@@ -1,0 +1,10 @@
+{
+  "name":"Express-4-example",
+  "description": "A easy example of using express",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies":{
+    "express": ">4.5",
+    "body-parser": "~1.0.1"
+  }
+}
