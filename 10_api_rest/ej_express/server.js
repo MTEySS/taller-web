@@ -2,64 +2,66 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser');
 
-// Static data
-var todos = [
-  { id: 'A', name:'Task A', description:'Little description of Task A'},
-  { id: 'B', name:'Task B', description:'Little description of Task B'},
-  { id: 'C', name:'Task C', description:'Little description of Task C'},
-  { id: 'D', name:'Task D', description:'Little description of Task D'},
-  { id: 'E', name:'Task E', description:'Little description of Task E'},
-  { id: 'F', name:'Task F', description:'Little description of Task F'},
-  { id: 'G', name:'Task G', description:'Little description of Task G'},
-  { id: 'H', name:'Task H', description:'Little description of Task H'},
-];
-
-// configure app to use bodyParser()
+// Configurar Express
 app.use(bodyParser());
 
 // public folder 
 app.use(express.static(__dirname + '/public'));
 
-// logging all requests
-app.all('/api/*', function (req, res, next) {
-  console.log('API Log...');
-  next();
+
+var todos = [
+  { id:1 ,name:'Tomar mate', description:'Pedirle a Lea un mate'},
+  { id:2 ,name:'Hacer andar NPM en MTESS', description:'Buscar un proxy copado'},
+  { id:3 ,name:'Comprar facturas', description:'Desc Comprar facturas'}
+];
+
+
+app.get('/todo',function(req,res,next){
+  res.json(todos);
 });
 
-  
+app.get('/todo/:id',function(req,res,next){
+  var idTodo = req.params.id;
 
-// Routes simple way
-app.get('/api/todo', function (req, res, next) {
-  // return todo list
-  res.send(todos);
+  var todoFiltrado = todos.filter(function(todo){
+    return todo.id.toString() === idTodo;
+  });
+  
+  if (todoFiltrado.length>0){ // encontre elementos en el array
+    res.json(todoFiltrado[0]);  
+  }else
+    res.status(404).send('Not Found');
 });
+
+app.post('/todo',function(req,res,next){
+  var newTodo ={};
   
-
-app.post('/api/todo', function (req, res, next) {
-
-  var newTodo = {};
   newTodo.id = req.body.id;
   newTodo.name = req.body.name;
   newTodo.description = req.body.description;
-
   
-  console.log(newTodo);
+  // agrego el item al array
   todos.push(newTodo);
-  
-  res.json({ message: 'Todo created!' });
+  res.send('Se ha generado correctamente');
 });
 
-
-app.get('/api/todo/:id', function (req, res, next) {
-  var todoId = req.params.id;
-
-  todos.forEach(function (todo) {
-    if (todo['id'] === todoId) {
-      // return Item
-      res.json(todo);
+app.delete('/todo/:id',function(req,res,next){
+  var idTodo = req.params.id;
+  var id =-1;
+  
+  todos.forEach(function(todo,index){
+    if ( todo.id.toString() === idTodo){
+      id = index;
     }
   });
-
+  
+  // encontro el elemento a eliminar
+  if (id!==-1){
+    todos.splice(id,1);
+    res.send('Se ha BORRADO correctamente');
+  }
+  else
+    res.status(404).send('Not Found - al eliminar');
 });
 
 
