@@ -2,20 +2,23 @@ var express = require('express'),
     app = express(),
     bodyParser = require('body-parser');
 
-// Configurar Express
+// Configurar bodyParser:
+// Nos permite obtener los valores en req.body al recibir un POST
 app.use(bodyParser());
 
-// public folder 
+// Configura carpeta publica:
+// Permite alojar archivos, sitio web, etc
 app.use(express.static(__dirname + '/public'));
 
 
+// Datos de pueba para ofrecer en el servicio
 var todos = [
-  { id:1 ,name:'Tomar mate', description:'Pedirle a Lea un mate'},
-  { id:2 ,name:'Hacer andar NPM en MTESS', description:'Buscar un proxy copado'},
-  { id:3 ,name:'Comprar facturas', description:'Desc Comprar facturas'}
-];
+  { id: 1 , name:'Pasaje', description:'Comprar pasajes a St. Thomas' , done:false },
+  { id: 2 , name:'Documentacion', description:'Verificar pasaportes y visas', done:false },
+  { id: 3 , name:'Reservar Excursiones', description:'Reservar clases de buceo', done:false }
+]; 
 
-
+// Ruteos GET, POST, DELETE, PUT de las entidades
 app.get('/todo',function(req,res,next){
   res.json(todos);
 });

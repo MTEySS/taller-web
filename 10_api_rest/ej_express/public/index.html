@@ -13,17 +13,21 @@
   <div class="container" ng-app="TodoApp">
    
   <div ng-controller="MainController">
-  <form role="form">
+  <form name="userForm" role="form">
     <h1>Todo Angular.js</h1>
     <div class="form-group">
+      <label>Id</label>
+      <input class="form-control" placeholder="Id" ng-model="todo.id" required >
+    </div>
+    <div class="form-group">
       <label>Name</label>
-      <input class="form-control" placeholder="Name" ng-model="todo.name">
+      <input class="form-control" placeholder="Name" ng-model="todo.name" required>
     </div>
     <div class="form-group">
       <label>Description</label>
-      <input class="form-control" placeholder="Description" ng-model="todo.description">
+      <input class="form-control" placeholder="Description" ng-model="todo.description" required>
     </div>
-    <button type="submit" class="btn btn-default" ng-click="addTodo()">Submit</button>
+    <button type="submit" class="btn btn-default" ng-click="addTodo(todo)">Submit</button>
   </form>
   <table class="table table-striped">
       <thead>
@@ -31,6 +35,8 @@
           <th>#</th>
           <th>Name</th>
           <th>Description</th>
+          <th>Status</th>
+          <th></th>
           <th></th>
         </tr>
       </thead>
@@ -38,7 +44,14 @@
         <tr ng-repeat="todo in todos">
           <td>{{ todo.id }}</td>
           <td>{{ todo.name }}</td>
-          <td>{{ todo.description }}</td>    
+          <td>{{ todo.description }}</td>
+          <td>{{ todo.done }}</td>
+          <td>
+            <button class="btn btn-default" ng-click="changeStatus(todo)">||</button>
+          </td>
+          <td>
+            <button class="btn btn-default" ng-click="deleteTodo(todo)">X</button>
+          </td>
         </tr>
       </tbody>
     </table>  
@@ -48,17 +61,21 @@
         var app = angular.module('TodoApp',[]);
       
         app.controller('MainController',function($scope){
-           $scope.todos = [
-              { id:1 ,name:'Tomar mate', description:'Pedirle a Lea un mate'},
-              { id:2 ,name:'Hacer andar NPM en MTESS', description:'Buscar un proxy copado'},
-              { id:3 ,name:'Comprar facturas', description:'Desc Comprar facturas'}
-          ];          
+          
+          $scope.todos = [];          
 
           $scope.addTodo = function(todo){
-            
-            console.log(todo);
-            $scope.todos.push(todo);
-          }
+            todo.done = false;
+            $scope.todos.push(angular.extend({}, todo));
+          };
+
+          $scope.changeStatus = function(todo){
+            todo.done = !todo.done;
+          };
+          
+          $scope.deleteTodo = function(todo){
+            //TODO: terminar delete
+          };
           
         });
       
