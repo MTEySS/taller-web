@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <title>TODO Angular.js</title>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container" ng-app="TodoApp">
+   
+  <div ng-controller="MainController">
+  <form role="form">
+    <h1>Todo Angular.js</h1>
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control" placeholder="Name" ng-model="todo.name">
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input class="form-control" placeholder="Description" ng-model="todo.description">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="addTodo()">Submit</button>
+  </form>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="todo in todos">
+          <td>{{ todo.id }}</td>
+          <td>{{ todo.name }}</td>
+          <td>{{ todo.description }}</td>    
+        </tr>
+      </tbody>
+    </table>  
+    </div>  
+    
+    <script type="application/javascript">
+        var app = angular.module('TodoApp',[]);
+      
+        app.controller('MainController',function($scope){
+           $scope.todos = [
+              { id:1 ,name:'Tomar mate', description:'Pedirle a Lea un mate'},
+              { id:2 ,name:'Hacer andar NPM en MTESS', description:'Buscar un proxy copado'},
+              { id:3 ,name:'Comprar facturas', description:'Desc Comprar facturas'}
+          ];          
+
+          $scope.addTodo = function(todo){
+            
+            console.log(todo);
+            $scope.todos.push(todo);
+          }
+          
+        });
+      
+    </script>     
+</div>
+</body>
+
+</html>
