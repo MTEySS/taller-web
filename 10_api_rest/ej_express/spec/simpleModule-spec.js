@@ -26,8 +26,6 @@ describe('Spliting text',function(){
     
     expect(value).toBe('r');
   });
-  
-
 
 });
 
