@@ -60,9 +60,41 @@
     <script type="application/javascript">
         var app = angular.module('TodoApp',[]);
       
-        app.controller('MainController',function($scope){
+        app.factory('HTTPService',function($http){
+            var service={};
           
-          $scope.todos = [];          
+            service.getTodos = function(callback){
+                $http({ method:'GET' , url:'/todo'})
+                .success(callback)
+                .error(function(data){
+                  console.log('ERROR');
+                  return null;
+                });
+            
+            };
+          
+           service.promiseGetTodos = function(){
+                $http.get('/todo')
+                  .then(function(result){
+                    return result.data;
+                });
+            
+            };
+          
+            return service;
+        });
+      
+        app.controller('MainController',function($scope,HTTPService){
+          
+          
+          
+          //$scope.todos = [];   
+          HTTPService.getTodos(function(data,status){
+            $scope.todos = data;
+          });       
+          
+          
+         // $scope.todos = HTTPService.promiseGetTodos;
 
           $scope.addTodo = function(todo){
             todo.done = false;
@@ -73,8 +105,14 @@
             todo.done = !todo.done;
           };
           
-          $scope.deleteTodo = function(todo){
-            //TODO: terminar delete
+          $scope.deleteTodo = function(formTodo){
+            todos.forEach(function (todo, index) {
+              if (todo.id === formTodo.id) {
+                // borro los elementos 
+                todos.splice(index, 1);
+                return;
+              }
+            });
           };
           
         });

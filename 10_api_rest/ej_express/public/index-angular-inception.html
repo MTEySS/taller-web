@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <title>Basico Angular.js</title>
+  <script src="angular.min.js"></script>
+  </head>
+
+<body ng-app="MyApp">
+  
+  
+    <div ng-controller="MainController">
+      <h1>{{titulo}}</h1>  
+      <hr>
+      <input type="text" ng-model="nombre"></input>
+      <h1>
+          hola <strong>{{ nombre }}</strong>
+          <hr>
+          hola <strong>{{ toUpper(nombre) }}</strong>
+      </h1>
+      
+    </div>
+  
+  <script type="application/javascript">
+    
+      var app = angular.module('MyApp',[]);
+    
+      app.controller("MainController",function($scope){
+          $scope.titulo = "Soy el titulo";
+          $scope.toUpper = function(str){
+            return str.toUpperCase();
+          }
+      
+      })
+      
+      
+  </script>  
+</body>
+
+</html>
