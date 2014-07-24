@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Theme Template for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+
+  <style>
+    ul#aligned {
+      text-align: right;
+    }
+    ul#auto-margin {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    ul#floated {
+      float: right;
+    }
+  </style>
+
+  <body role="document">
+
+    <div class="container-fluid theme-showcase" role="main">
+
+      <div class="row">
+
+        <div class='panel panel-default'>
+          <div class="panel-heading">My panel with text-align (nothing happens)</div>
+
+          <ul id="aligned" class="pagination">
+            <li class="disabled"><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+
+        </div> <!-- /panel panel-default -->
+
+      </div>
+
+      <hr />
+
+      <div class="row">
+
+        <div class='panel panel-default'>
+          <div class="panel-heading">My panel eith left and right margin set to auto (nothing happens)</div>
+
+          <ul id="auto-margin" class="pagination">
+            <li class="disabled"><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+
+        </div> <!-- /panel panel-default -->
+
+      </div>
+
+      <hr />
+
+      <div class="row">
+
+        <div class='panel panel-default'>
+          <div class="panel-heading">My panel floating to the right (pagination falls out of the panel)</div>
+
+          <ul id="floated" class="pagination">
+            <li class="disabled"><a href="#">&laquo;</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">&raquo;</a></li>
+          </ul>
+
+        </div> <!-- /panel panel-default -->
+
+      </div>
+
+      <hr />
+
+      <div class="row">
+
+        <div class='panel panel-default'>
+          <div class="panel-heading">My panel with then html tag align=right (same as float)</div>
+
+          <div class="text-right">
+            <ul class="pagination">
+              <li class="disabled"><a href="#">&laquo;</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+          </div>
+
+        </div> <!-- /panel panel-default -->
+
+      </div>
+
+      <hr />
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

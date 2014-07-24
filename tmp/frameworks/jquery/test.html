@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Theme Template for Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+
+    <link rel="stylesheet" href="css/bootstrap-darkly.min.css">
+
+    <!-- <link rel="stylesheet" href="css/bootstrap-flatly.min.css"> -->
+
+    <!-- Optional theme -->
+<!--     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+ -->
+
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+    <div class="container-fluid theme-showcase" role="main">
+
+      <div id='title'>
+        <div class="page-header">
+          <h1>Wells</h1>
+        </div>
+        <div class="well">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean lacinia bibendum nulla sed consectetur.</p>
+        </div>
+      </div>
+
+      <div class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> Change a few things up and try submitting again.
+      </div>
+
+      <div class='panel panel-default'>
+
+        <div class="panel-heading">Github browser</div>
+
+        <div class="panel-body">
+          <form class='form' role="form">
+            <div class="form-group col-sm-6">
+              <div class="input-group">
+                <input type="text" id="search" class="form-control" placeholder="repo...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Buscar!</button>
+                </span>
+              </div>
+            </div>
+            <div class="form-group col-sm-6">
+              <div class="input-group">
+                <input type="text" id="search-language" class="form-control" placeholder="language...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Buscar!</button>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div id='repositories-list'>
+          <table id="repositories" class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Url</th>
+                <th>Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>Mark</td>
+                <td>Otto</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td colspan="2">Larry the Bird</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class='pagination-container'>
+            <ul class="pagination">
+              <li class="disabled"><a href="#">&laquo;</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">&raquo;</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div> <!-- /panel panel-default -->
+
+    </div> <!-- /container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script>
+
+    $(function() {
+
+      $('#search').on('input', _.debounce(function(e) {
+        searchRepositories();
+      }, 800));
+
+      $('#search-button').on('click', function(e) {
+        searchRepositories();
+      });
+
+      // template setting - moustache like style
+      _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
+
+/*      var htmlRowTemplate =
+        '<tr>\n' +
+        '  <td>{{number}}</td>\n' +
+        '  <td>{{name}}</td>\n' +
+        '  <td><a href="{{url}}">{{url}}</a></td>\n' +
+        '  <td>{{descripcion}}</td>\n' +
+        '</tr>\n\n';
+*/
+      // var rowTemplate = _.template(htmlRowTemplate);
+      var rowTemplate = _.template($('#row-template').html());
+
+      // sample: https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc
+      var githubReposEndpoint = 'https://api.github.com/search/repositories';
+
+      var searchRepositories = function() {
+        var query = $('#search').val();
+        console.log('searching repos', $('#search').val());
+
+        fetchData(query, function(data) {
+          updateTable(data);
+        });
+      }
+
+      var updateTable = function(data) {
+        $('table#repositories tbody').find('tr').remove();
+        _.each(data, function(row) {
+          $('table#repositories tbody').append(rowTemplate(row));
+        });
+      }
+
+      var fetchData = function(query, callback) {
+        var url = githubReposEndpoint;
+        if (query) url += '?q=' + encodeURIComponent(query);
+        console.log('getJSON', url)
+        $.getJSON( url, function(data) {
+          var rows = _.map(data.items, function(row, index) {
+            return {
+              number:       index + 1,
+              name:         row.name,
+              url:          row.html_url,
+              descripcion:  row.description,
+              gitUrl:       row.clone_url,
+              gitCommand:   'git clone ' + row.clone_url
+            }
+          });
+          callback(rows);
+        });
+      };
+
+    });
+    </script>
+
+    <script type="text/template" id="row-template">
+        <tr>
+          <td>{{number}}</td>
+          <td>{{name}}</td>
+          <td><a href="{{url}}">{{url}}</a></td>
+          <td>{{descripcion}}</td>
+        </tr>
+
+    </script>
+
+  </body>
+</html>
+
+<!--
+#TODO: add spin button: http://jsfiddle.net/AndrewDryga/zcX4h/1/
+-->
